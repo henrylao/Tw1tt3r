@@ -59,4 +59,23 @@ public class RestClient extends OAuthBaseClient {
 	 *    i.e client.get(apiUrl, params, handler);
 	 *    i.e client.post(apiUrl, params, handler);
 	 */
+	// client definition of endpoint to retrieve data from or send data to
+	public void getHomeTimeline(int page, JsonHttpResponseHandler handler) {
+		String apiUrl = getApiUrl("statuses/home_timeline.json");
+		RequestParams params = new RequestParams();
+		params.put("page", String.valueOf(page));
+		getClient().get(apiUrl, params, handler);
+	}
+
+	// 
+	public void postTweet(String body, JsonHttpResponseHandler handler) {
+		String apiUrl = getApiUrl("statuses/update.json");
+		RequestParams params = new RequestParams();
+		params.put("status", body);
+		getClient().post(apiUrl, params, handler);
+	}
+
+
+
+
 }
