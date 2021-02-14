@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>310</x>
+      <y>820</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>User
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>420</x>
+      <y>670</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>RestClient
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>270</x>
+      <y>1090</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Tweet
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>450</x>
+      <y>960</y>
+      <w>140</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+TwitterDAO
+--
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>340</x>
+      <y>1170</y>
+      <w>160</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>/MyDatabase/
+--
++ TwitterDAO twitterDAO
++ String NAME</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>680</x>
+      <y>940</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>RoomDatabase
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>180</x>
+      <y>580</y>
+      <w>210</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>RESTClientApp
+--
+# myDB: MyDatabase
+--
++ void onCreate
++ MyDatabase getMyDatabase</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>600</x>
+      <y>490</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Application
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>240</x>
+      <y>280</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>LoginActivity
+--
+
+--
++ void onLoginSuccess
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
