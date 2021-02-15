@@ -81,14 +81,14 @@ public class Tweet {
             String[] tokens = relativeDate.split(" ");
             rv = tokens[0] + tokens[1].substring(0,1);
             // }
-
-
         } catch (ParseException e) {
             e.printStackTrace();
         }
         return rv;
 //        return relativeDate;
     }
+
+    // TODO: create method for getting the datetime ==> Ex. 1:09 PM | 2/13/21
 
 
 }
