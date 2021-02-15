@@ -44,7 +44,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_toEndOf="@+id/tvName"
-        tools:text="/@alishabennt" />
+        tools:text="\@alishabennt" />
 
     <ImageButton
         android:id="@+id/ibReply"
@@ -100,6 +100,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_toEndOf="@+id/tvScreenName"
-        android:text="TextView" />
+        tools:text="9h" />
 
 </RelativeLayout>
