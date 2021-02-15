@@ -24,7 +24,9 @@
         android:layout_marginStart="5dp"
         android:layout_marginTop="0dp"
         android:layout_toEndOf="@+id/ivProfileImage"
-        tools:text="AlishaBennett05512" />
+        tools:text="AlishaBennett05512"
+        android:textStyle="bold"
+        />
 
     <TextView
         android:id="@+id/tvBody"
