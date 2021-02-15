@@ -38,8 +38,7 @@ Here's a walkthrough of implemented user stories:
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes/Challenges
-
-Describe any challenges encountered while building the app.
+* Usage of RecyclerView such that items leaving the screen are cached away for later use for inflating views that are in view
 
 ## Open-source libraries used
 
