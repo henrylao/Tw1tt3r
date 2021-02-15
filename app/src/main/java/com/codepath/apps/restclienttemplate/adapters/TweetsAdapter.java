@@ -71,7 +71,7 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
     // define a viewholder
     public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView ivProfileImage;
-        TextView tvBody;
+        TextView tvBody, tvAge;
         TextView tvScreenName, tvName;
         ImageButton ibReply, ibRetweet, ibLike, ibShare;
         RelativeLayout rlTweetRow;
@@ -82,6 +82,7 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
             tvBody = itemView.findViewById(R.id.tvBody);
             tvName = itemView.findViewById(R.id.tvName);// FirstName LastName
             tvScreenName = itemView.findViewById(R.id.tvScreenName); // @aName
+            tvAge  = itemView.findViewById(R.id.tvAge);
 
             ibReply = itemView.findViewById(R.id.ibReply);
             ibRetweet = itemView.findViewById(R.id.ibRetweet);
@@ -94,6 +95,7 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
         public void bind(@NotNull final Tweet tweet) {
             tvBody.setText(tweet.body);
             tvName.setText(tweet.user.name);
+            tvAge.setText(tweet.getRelativeTimeAgo(tweet.createdAt));
             tvScreenName.setText("@" + tweet.user.screenName);
             Glide.with(context)
                     .load(tweet.user.profileImageUrl)
