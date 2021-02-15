@@ -45,16 +45,6 @@ public class TwitterClient extends OAuthBaseClient {
                         context.getString(R.string.intent_scheme), context.getPackageName(), FALLBACK_URL));
     }
 
-    // CHANGE THIS
-    // DEFINE METHODS for different API endpoints here
-    public void getInterestingnessList(JsonHttpResponseHandler handler) {
-        String apiUrl = getApiUrl("?nojsoncallback=1&method=flickr.interestingness.getList");
-        // Can specify query string params directly or through RequestParams.
-        RequestParams params = new RequestParams();
-        params.put("format", "json");
-        client.get(apiUrl, params, handler);
-    }
-
     /* 1. Define the endpoint URL with getApiUrl and pass a relative path to the endpoint
      * 	  i.e getApiUrl("statuses/home_timeline.json");
      * 2. Define the parameters to pass to the request (query or body)
@@ -67,15 +57,27 @@ public class TwitterClient extends OAuthBaseClient {
     public void getHomeTimeline(int page, JsonHttpResponseHandler handler) {
         String apiUrl = getApiUrl("statuses/home_timeline.json");
         RequestParams params = new RequestParams();
-        params.put("page", String.valueOf(page));
+//        params.put("page", String.valueOf(page));
+        params.put("count", 25);
+        params.put("since_id", 1);
         client.get(apiUrl, params, handler);
-    }
 
-    //
-    public void postTweet(String body, JsonHttpResponseHandler handler) {
-        String apiUrl = getApiUrl("statuses/update.json");
+    }
+//
+//    //
+//    public void postTweet(String body, JsonHttpResponseHandler handler) {
+//        String apiUrl = getApiUrl("statuses/update.json");
+//        RequestParams params = new RequestParams();
+//        params.put("status", body);
+//        client.post(apiUrl, String.valueOf(params), handler);
+//    }
+
+    public void getHomeTimeline(JsonHttpResponseHandler handler) {
+        String apiUrl = getApiUrl("statuses/home_timeline.json");
         RequestParams params = new RequestParams();
-        params.put("status", body);
-        client.post(apiUrl, String.valueOf(params), handler);
+//        params.put("page", String.valueOf(page));
+        params.put("count", 25);
+        params.put("since_id", 1);
+        client.get(apiUrl, params, handler);
     }
 }
