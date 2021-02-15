@@ -19,14 +19,14 @@ The following **optional** features are implemented:
 - [x] User can view more tweets as they scroll with infinite pagination
 - [ ] Improve the user interface and theme the app to feel "twitter branded"
 - [ ] Links in tweets are clickable and will launch the web browser
-- [ ] User can tap a tweet to display a "detailed" view of that tweet
+- [x] User can tap a tweet to display a "detailed" view of that tweet
 - [ ] User can see embedded image media within the tweet detail view
 - [ ] User can watch embedded video within the tweet
 - [ ] User can open the twitter app offline and see last loaded tweets
 - [ ] On the Twitter timeline, leverage the CoordinatorLayout to apply scrolling behavior that hides / shows the toolbar.
 
 The following **additional** features are implemented:
-- [x] Add profile rounded corner
+- [x] Add profile circle crop
 - [x] Add bolded username
 - [x] Add image button icons
 
@@ -35,6 +35,7 @@ The following **additional** features are implemented:
 Here's a walkthrough of implemented user stories:
 
 <img src="https://github.com/henrylao/Tw1tt3r/blob/stable/docs/login-and-scroll-portrait.gif" width=250><br>
+<img src="https://github.com/henrylao/Tw1tt3r/blob/stable/docs/portrait-tweet-detail-view.gif" width=250><br>
 <img src="https://github.com/henrylao/Tw1tt3r/blob/stable/docs/scroll-landscape.gif" width=750><br>
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
