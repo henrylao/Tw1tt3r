@@ -17,24 +17,80 @@
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/tvScreenName"
+        android:id="@+id/tvName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginStart="5dp"
         android:layout_marginTop="0dp"
         android:layout_toEndOf="@+id/ivProfileImage"
-        tools:text="AlishaBennett05512"
         android:textStyle="bold"
-        />
+        tools:text="Alisha Bennet" />
 
     <TextView
         android:id="@+id/tvBody"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tvScreenName"
+        android:layout_below="@+id/tvName"
         android:layout_marginStart="5dp"
         android:layout_marginTop="2dp"
         android:layout_toEndOf="@+id/ivProfileImage"
         tools:text="I'm going to keep tweeting!" />
+
+    <TextView
+        android:id="@+id/tvScreenName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_toEndOf="@+id/tvName"
+        tools:text="/@alishabennt" />
+
+    <ImageButton
+        android:id="@+id/ibReply"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvBody"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@+id/ivProfileImage"
+        android:background="#00FFFFFF"
+        android:tint="@android:color/secondary_text_dark"
+        app:srcCompat="@drawable/ic_twitter_reply_icon" />
+
+    <ImageButton
+        android:id="@+id/ibRetweet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvBody"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@+id/ibReply"
+        android:background="#00FFFFFF"
+        android:tint="@android:color/secondary_text_dark"
+        app:srcCompat="@drawable/ic_twitter_retweet_icon" />
+
+    <ImageButton
+        android:id="@+id/ibLike"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvBody"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@+id/ibRetweet"
+        android:background="#FFFFFF"
+        android:tint="@android:color/secondary_text_dark"
+        app:srcCompat="@drawable/ic_twitter_like_icon" />
+
+    <ImageButton
+        android:id="@+id/ibShare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvBody"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@+id/ibLike"
+        android:background="#FFFFFF"
+        android:tint="@android:color/secondary_text_dark"
+        app:srcCompat="@drawable/ic_twitter_share_icon" />
+
 </RelativeLayout>

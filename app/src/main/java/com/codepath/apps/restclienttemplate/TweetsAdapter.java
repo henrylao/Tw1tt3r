@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -11,11 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
-import com.bumptech.glide.request.RequestOptions;
 import com.codepath.apps.restclienttemplate.models.Tweet;
-
-import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -69,22 +66,30 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
     public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView ivProfileImage;
         TextView tvBody;
-        TextView tvScreenName;
+        TextView tvScreenName, tvName;
+        ImageButton ibReply, ibRetweet, ibLike, ibShare;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             ivProfileImage = itemView.findViewById(R.id.ivProfileImage);
             tvBody = itemView.findViewById(R.id.tvBody);
-            tvScreenName = itemView.findViewById(R.id.tvScreenName);
+            tvName = itemView.findViewById(R.id.tvName);// FirstName LastName
+            tvScreenName = itemView.findViewById(R.id.tvScreenName); // @aName
 
+            ibReply = itemView.findViewById(R.id.ibReply);
+            ibRetweet = itemView.findViewById(R.id.ibRetweet);
+            ibLike = itemView.findViewById(R.id.ibLike);
+            ibShare = itemView.findViewById(R.id.ibShare);
         }
 
         public void bind(Tweet tweet) {
             tvBody.setText(tweet.body);
-            tvScreenName.setText(tweet.user.screenName);
+            tvName.setText(tweet.user.name);
+            tvScreenName.setText("@" + tweet.user.screenName);
             Glide.with(context)
                     .load(tweet.user.profileImageUrl)
-                    .apply(RequestOptions.bitmapTransform(new RoundedCorners(14)))
+                    .circleCrop()
+//                    .apply(RequestOptions.bitmapTransform(new RoundedCorners(14)))
                     .into(ivProfileImage);
         }
 
