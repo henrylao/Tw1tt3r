@@ -28,6 +28,7 @@ The following **optional** features are implemented:
 The following **additional** features are implemented:
 - [x] Add profile rounded corner
 - [x] Add bolded username
+- [x] Add image button icons
 
 ## Video Walkthrough
 
