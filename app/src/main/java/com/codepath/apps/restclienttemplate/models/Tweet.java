@@ -55,6 +55,7 @@ public class Tweet {
                 .toString();
     }
 
+    // TODO refer to: https://github.com/ZacharyST/Twitter_AdjustTimeCorrectly/blob/master/AdjustTimeToLocalTime.py
     public String getAge() {
 //// Custom date format
 //        SimpleDateFormat format = new SimpleDateFormat("yy/MM/dd HH:mm:ss");
