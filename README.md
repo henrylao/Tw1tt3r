@@ -33,7 +33,8 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src="https://github.com/henrylao/Tw1tt3r/blob/stable/docs/login-and-scroll-portrait.gif" width=250><br>
+<img src="https://github.com/henrylao/Tw1tt3r/blob/stable/docs/scroll-landscape.gif" width=750><br>
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
