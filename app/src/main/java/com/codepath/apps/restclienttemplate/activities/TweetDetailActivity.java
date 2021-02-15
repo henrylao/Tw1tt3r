@@ -54,6 +54,8 @@ public class TweetDetailActivity extends AppCompatActivity {
                 .circleCrop()
 //                    .apply(RequestOptions.bitmapTransform(new RoundedCorners(14)))
                 .into(ivProfileImage);
+        // TODO: use method for getting the datetime (1:09 PM | 2/13/21) to populate tvDatetime
+
 
     }
 }
