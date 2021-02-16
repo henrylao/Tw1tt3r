@@ -2,7 +2,7 @@
 
 **Tw1tt3r** is an android app that allows a user to view his Twitter timeline. The app utilizes [Twitter REST API](https://dev.twitter.com/rest/public).
 
-Time spent: **20** hours spent in total
+Time spent: **25** hours spent in total
 
 ## User Stories
 
@@ -17,8 +17,8 @@ The following **required** functionality is completed:
 The following **optional** features are implemented:
 
 - [x] User can view more tweets as they scroll with infinite pagination
-- [ ] Improve the user interface and theme the app to feel "twitter branded"
-- [ ] Links in tweets are clickable and will launch the web browser
+- [x] Improve the user interface and theme the app to feel "twitter branded"
+- [x] Links in tweets are clickable and will launch the web browser
 - [x] User can tap a tweet to display a "detailed" view of that tweet
 - [ ] User can see embedded image media within the tweet detail view
 - [ ] User can watch embedded video within the tweet
@@ -26,9 +26,6 @@ The following **optional** features are implemented:
 - [ ] On the Twitter timeline, leverage the CoordinatorLayout to apply scrolling behavior that hides / shows the toolbar.
 
 The following **additional** features are implemented:
-- [x] Add profile circle crop
-- [x] Add bolded username
-- [x] Add image button icons
 
 ## Video Walkthrough
 

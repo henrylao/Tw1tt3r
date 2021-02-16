@@ -34,6 +34,8 @@
         android:layout_below="@+id/ivProfileImage"
         android:layout_marginStart="10dp"
         android:layout_marginTop="2dp"
+        android:autoLink="all"
+        android:linksClickable="true"
         android:textSize="16sp"
         tools:text="I'm going to keep tweeting!" />
 
