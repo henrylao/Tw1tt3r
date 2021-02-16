@@ -1,6 +1,7 @@
 package com.codepath.apps.restclienttemplate.models;
 import java.util.regex.Pattern;
 import android.text.format.DateUtils;
+import android.util.Log;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -16,7 +17,7 @@ import java.util.Locale;
 
 @Parcel
 public class Tweet {
-
+    public static final String TAG = "Tweet";
     public String body;
     public String createdAt;
     public User user;
@@ -78,10 +79,22 @@ public class Tweet {
             // if date is greater than 1 week then return the actual date of event
             // if (){}
             // else {
-            String[] tokens = relativeDate.split(" ");
-            rv = tokens[0] + tokens[1].substring(0,1);
+            if (relativeDate.compareTo("Yesterday") == 0) {
+                rv = "1d";
+            }
+            else {
+                String[] tokens = relativeDate.split(" ");
+                rv = tokens[0] + tokens[1].substring(0,1);
+            }
+
+//            Log.i(TAG, "getRelativeTimeAgo success" + relativeDate);
             // }
         } catch (ParseException e) {
+            Log.i(TAG, "getRelativeTimeAgo failure: " + relativeDate, e);
+            e.printStackTrace();
+        } catch (ArrayIndexOutOfBoundsException e){
+            Log.i(TAG, "getRelativeTimeAgo failure: " + relativeDate, e);
+//            Log.i(TAG, "getRelativeTimeAgo failure", e);
             e.printStackTrace();
         }
         return rv;
