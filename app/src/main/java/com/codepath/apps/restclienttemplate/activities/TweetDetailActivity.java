@@ -60,7 +60,6 @@ public class TweetDetailActivity extends AppCompatActivity {
 //                    .apply(RequestOptions.bitmapTransform(new RoundedCorners(14)))
                 .into(ivProfileImage);
         // TODO: use method for getting the datetime (1:09 PM | 2/13/21) to populate tvDatetime
-        // TODO: add clicable username here
         new PatternEditableBuilder().
                 addPattern(Pattern.compile("\\@(\\w+)"), Color.BLUE,
                         new PatternEditableBuilder.SpannableClickedListener() {
