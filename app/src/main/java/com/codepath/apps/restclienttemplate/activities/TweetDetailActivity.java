@@ -2,17 +2,22 @@ package com.codepath.apps.restclienttemplate.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.codepath.apps.restclienttemplate.PatternEditableBuilder;
 import com.codepath.apps.restclienttemplate.R;
 import com.codepath.apps.restclienttemplate.models.Tweet;
 
 import org.parceler.Parcels;
+
+import java.util.regex.Pattern;
 
 public class TweetDetailActivity extends AppCompatActivity {
 
@@ -55,7 +60,28 @@ public class TweetDetailActivity extends AppCompatActivity {
 //                    .apply(RequestOptions.bitmapTransform(new RoundedCorners(14)))
                 .into(ivProfileImage);
         // TODO: use method for getting the datetime (1:09 PM | 2/13/21) to populate tvDatetime
-
+        // TODO: add clicable username here
+        new PatternEditableBuilder().
+                addPattern(Pattern.compile("\\@(\\w+)"), Color.BLUE,
+                        new PatternEditableBuilder.SpannableClickedListener() {
+                            @Override
+                            public void onSpanClicked(String text) {
+                                // implementing routing to a new activity/view
+                                // specifically the user's profile that was clicked
+                                Toast.makeText(TweetDetailActivity.this, "Clicked username: " + text,
+                                        Toast.LENGTH_SHORT).show();
+                            }
+                        }).into(tvScreenName);
+        new PatternEditableBuilder().
+                addPattern(Pattern.compile("\\@(\\w+)"), Color.BLUE,
+                        new PatternEditableBuilder.SpannableClickedListener() {
+                            @Override
+                            public void onSpanClicked(String text) {
+                                // implementing routing to a new activity/view
+                                Toast.makeText(TweetDetailActivity.this, "Clicked username: " + text,
+                                        Toast.LENGTH_SHORT).show();
+                            }
+                        }).into(tvBody);
 
     }
 }
