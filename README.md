@@ -31,7 +31,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src="https://github.com/henrylao/Tw1tt3r/blob/stable/docs/portrait-tweet-02-16-21.gif" width=250><br>
+<img src="https://github.com/henrylao/Tw1tt3r/blob/stable/docs/portrait-tweet-clickable-username-02-16-21.gif" width=250><br>
 <img src="https://github.com/henrylao/Tw1tt3r/blob/stable/docs/landscape-tweet-02-16-21.gif" width=750><br>
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
