@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -111,6 +112,8 @@ public class TimelineActivity extends AppCompatActivity {
             // navigate to compose activity
             Toast.makeText(this, "Compose", Toast.LENGTH_SHORT).show();
             Log.i(TAG, "onOptionsItemSelected --> checkedByTitle --> tapped");
+            Intent intendToCompose = new Intent(this, ComposeTweetActivity.class);
+            startActivity(intendToCompose);
             return true;
         }
         return false;
