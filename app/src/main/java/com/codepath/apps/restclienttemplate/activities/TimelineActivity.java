@@ -1,5 +1,6 @@
 package com.codepath.apps.restclienttemplate.activities;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -7,6 +8,9 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.codepath.apps.restclienttemplate.EndlessRecyclerViewScrollListener;
 import com.codepath.apps.restclienttemplate.R;
@@ -83,6 +87,35 @@ public class TimelineActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // inflate the menu; this adds items to the action bar if it is present
+        getMenuInflater().inflate(R.menu.compose, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        // Broken check by menu ID variables
+//        int menuID = item.getItemId();
+//        int menuGroupID = item.getGroupId();
+//        String menuTitleKnown = "compose";
+//        String menuTitleVar = (String) item.getTitle();
+//        int known = R.menu.compose;
+        // TODO currently broken: current solution uses check by title
+        if (item.getItemId() == R.menu.compose){
+            Log.i(TAG, "onOptionsItemSelected --> checkedByID --> tapped");
+        }
+        if (item.getTitle().equals("compose")) {
+            // compose icon was tapped
+            // navigate to compose activity
+            Toast.makeText(this, "Compose", Toast.LENGTH_SHORT).show();
+            Log.i(TAG, "onOptionsItemSelected --> checkedByTitle --> tapped");
+            return true;
+        }
+        return false;
+    }
+
     private void loadMoreData() {
         // Send an API request to retrieve appropriate paginated data
         //  --> Send the request including an offset value (i.e `page`) as a query parameter.
@@ -92,7 +125,7 @@ public class TimelineActivity extends AppCompatActivity {
 
                 Log.i(TAG, "loadMoreData --> onSuccess" + json.toString());
                 Log.i(TAG, "loadMoreData last id: " + tweets.get(tweets.size() - 1).id);
-                Log.i(TAG, tweets.get(tweets.size()-1).toString());
+                Log.i(TAG, tweets.get(tweets.size() - 1).toString());
                 //  --> Deserialize and construct new model objects from the API response
                 JSONArray jsonArray = json.jsonArray;
                 try {
@@ -104,6 +137,7 @@ public class TimelineActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
             }
+
             @Override
             public void onFailure(int statusCode, Headers headers, String response, Throwable throwable) {
                 Log.i(TAG, "loadMoreData --> onFailure", throwable);
