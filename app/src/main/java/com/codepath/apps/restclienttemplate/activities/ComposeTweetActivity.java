@@ -34,7 +34,6 @@ public class ComposeTweetActivity extends AppCompatActivity {
     Button btnTweet;
     TwitterClient client;
 
-    @SuppressLint("ResourceAsColor")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -104,15 +103,17 @@ public class ComposeTweetActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String tweetContent = etComposeTweet.getText().toString();
-                //
+                // immediately return to parent activity
                 if (tweetContent.isEmpty()) {
+                    finish();
                     Toast.makeText(ComposeTweetActivity.this, "Canceled!", Toast.LENGTH_SHORT).show();
                 }
-                //
+                // prompt user with a check on discarding current message draft
                 else {
-                }
-                // Make an API call to Twitter to publish the new Tweet
+                    // Make an API call to Twitter to save draft
 
+                    // Cache draft tweet?
+                }
 
             }
         });
