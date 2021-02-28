@@ -79,9 +79,11 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
         TextView tvScreenName, tvName;
         ImageButton ibReply, ibRetweet, ibLike, ibShare;
         RelativeLayout rlTweetRow;
+        ImageView ivVerifiedBadge;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+            ivVerifiedBadge = itemView.findViewById(R.id.ivVerfiedBadge);
             ivProfileImage = itemView.findViewById(R.id.ivProfileImage);
             tvBody = itemView.findViewById(R.id.tvBody);
             tvName = itemView.findViewById(R.id.tvName);// FirstName LastName
@@ -101,6 +103,12 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
             tvName.setText(tweet.user.name);
             tvAge.setText(tweet.getRelativeTimeAgo(tweet.createdAt));
             tvScreenName.setText("@" + tweet.user.screenName);
+            if (tweet.user.isVerified){
+                ivVerifiedBadge.setVisibility(View.VISIBLE);
+            }
+            else {
+                ivVerifiedBadge.setVisibility(View.INVISIBLE);
+            }
             Glide.with(context)
                     .load(tweet.user.profileImageUrl)
                     .circleCrop()

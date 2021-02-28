@@ -8,7 +8,7 @@ import android.view.Menu;
 import android.view.View;
 
 import com.codepath.apps.restclienttemplate.R;
-import com.codepath.apps.restclienttemplate.TwitterApp;
+import com.codepath.apps.restclienttemplate.TwitterApplication;
 import com.codepath.apps.restclienttemplate.TwitterClient;
 import com.codepath.apps.restclienttemplate.models.SampleModel;
 import com.codepath.apps.restclienttemplate.models.SampleModelDao;
@@ -24,16 +24,17 @@ public class LoginActivity extends OAuthLoginActionBarActivity<TwitterClient> {
 		setContentView(R.layout.activity_login);
 
 		final SampleModel sampleModel = new SampleModel();
-		sampleModel.setName("Tw1tt3r");
+//		sampleModel.setName("Tw1tt3r");
 
-		sampleModelDao = ((TwitterApp) getApplicationContext()).getMyDatabase().sampleModelDao();
+//		sampleModelDao = ((TwitterApplication) getApplicationContext()).getMyDatabase().sampleModelDao();
 
-		AsyncTask.execute(new Runnable() {
-			@Override
-			public void run() {
-				sampleModelDao.insertModel(sampleModel);
-			}
-		});
+		// create and run task on a thread that is not the main UI thread
+//		AsyncTask.execute(new Runnable() {
+//			@Override
+//			public void run() {
+//				sampleModelDao.insertModel(sampleModel);
+//			}
+//		});
 	}
 
 

@@ -1,7 +1,15 @@
 package com.codepath.apps.restclienttemplate.models;
+
 import java.util.regex.Pattern;
+
 import android.text.format.DateUtils;
 import android.util.Log;
+
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.ForeignKey;
+import androidx.room.Ignore;
+import androidx.room.PrimaryKey;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -18,11 +26,20 @@ import java.util.Locale;
 @Parcel
 public class Tweet {
     public static final String TAG = "Tweet";
-    public String body;
-    public String createdAt;
-    public User user;
+//    @PrimaryKey
+//    @ColumnInfo
     public long id;
+//    @ColumnInfo
+    public String body;
+//    @ColumnInfo
+    public String createdAt;
+//    @Ignore
+    public User user;
+//    @ColumnInfo
+    public long userId;
+//    @ColumnInfo
     public boolean isRetweeted, isFavorited, isPossiblySensitive;
+//    @ColumnInfo
     public int favoriteCount, // like count
             retweetCount;
 
@@ -61,7 +78,6 @@ public class Tweet {
     }
 
     /**
-     *
      * @param rawJsonDate
      * @return
      */
@@ -81,10 +97,9 @@ public class Tweet {
             // else {
             if (relativeDate.compareTo("Yesterday") == 0) {
                 rv = "1d";
-            }
-            else {
+            } else {
                 String[] tokens = relativeDate.split(" ");
-                rv = tokens[0] + tokens[1].substring(0,1);
+                rv = tokens[0] + tokens[1].substring(0, 1);
             }
 
 //            Log.i(TAG, "getRelativeTimeAgo success" + relativeDate);
@@ -92,7 +107,7 @@ public class Tweet {
         } catch (ParseException e) {
             Log.i(TAG, "getRelativeTimeAgo failure: " + relativeDate, e);
             e.printStackTrace();
-        } catch (ArrayIndexOutOfBoundsException e){
+        } catch (ArrayIndexOutOfBoundsException e) {
             Log.i(TAG, "getRelativeTimeAgo failure: " + relativeDate, e);
 //            Log.i(TAG, "getRelativeTimeAgo failure", e);
             e.printStackTrace();

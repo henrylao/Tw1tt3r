@@ -1,19 +1,35 @@
 package com.codepath.apps.restclienttemplate.models;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.parceler.Parcel;
 
-@Parcel
-public class User {
+import java.util.ArrayList;
+import java.util.List;
 
-    public String name;
-    public String screenName;
-    public String profileImageUrl;
+@Parcel
+@Entity
+public class User {
+    @PrimaryKey
+    @ColumnInfo
     public long id;
+    @ColumnInfo
+    public String name;
+    @ColumnInfo
+    public String screenName;
+    @ColumnInfo
+    public String profileImageUrl;
+    @ColumnInfo
     public String description;
+    @ColumnInfo
     public String location;
+    @ColumnInfo
     public int friendsCount, followersCount;
+    @ColumnInfo
     public boolean isVerified;
 
     public static User fromJson(JSONObject jsonObject) throws JSONException {
@@ -26,7 +42,16 @@ public class User {
         user.name = jsonObject.getString("name");
         user.screenName = jsonObject.getString("screen_name");
         user.profileImageUrl = jsonObject.getString("profile_image_url_https");
+        user.isVerified = jsonObject.getBoolean("verified");
         return user;
+    }
+
+    public static List<User> fromJsonTweetArray(List<Tweet> tweetsFromNetwork) {
+        List<User> users = new ArrayList<>();
+        for (Tweet t: tweetsFromNetwork){
+            users.add(t.user);
+        }
+        return users;
     }
 }
 
